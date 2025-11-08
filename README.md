@@ -35,13 +35,32 @@ are limited. Other unmeasured factors (e.g., seasonality, creative quality, or c
 influence results. Future work should include campaign-level metrics and audience segmentation
 for deeper insight.
 
+# 📈 Relationship Between Ad Spend and Conversions
+
+**Author:** Jennifer Tran  
+**Tools:** R, ggplot2  
+**File:** `ad_spend_conversions_plot.R`
+
+---
+
+## 🧭 Overview
+
+This visualization explores the relationship between **advertising spend** and **conversions** using linear regression. The goal is to understand whether higher investment in ad campaigns corresponds with increased conversion rates.
+
+---
+
+## 💡 Code Summary
+
+The plot was created in **R** using the `ggplot2` package.  
+Below is the script:
+
+```r
 ggplot(df, aes(x = AdSpend, y = Conversions)) +
-geom_point(color = "#2E86C1", alpha = 0.7) +
-geom_smooth(method = "lm", color = "#B03A2E", se = TRUE) +
-labs(
-title = "Figure 1. Relationship Between Ad Spend and Conversions",
-x = "Ad Spend ($000s)",
-y = "Conversions"
-) +
-theme_minimal(base_size = 11)
-## `geom_smooth()` using formula = 'y ~ x'
+  geom_point(color = "#2E86C1", alpha = 0.7) +
+  geom_smooth(method = "lm", color = "#B03A2E", se = TRUE) +
+  labs(
+    title = "Figure 1. Relationship Between Ad Spend and Conversions",
+    x = "Ad Spend ($000s)",
+    y = "Conversions"
+  ) +
+  theme_minimal(base_size = 11)
